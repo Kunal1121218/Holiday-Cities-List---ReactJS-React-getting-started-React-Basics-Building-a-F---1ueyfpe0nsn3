@@ -36,11 +36,16 @@ class App extends Component {
     { name: 'Tirupati', country: 'India' },
     ]
   }
-
+  const filteredCities = cities.filter(city => city.country === "India");
   render() {
     return (
       <div id="main">
-        {/* Do not remove the main div */}
+        <h1>Promoting Domestic Tourism</h1>
+      <ul>
+        {filteredCities.map((city, index) => (
+          <li key={`city-${index}`}>{city.name}</li>
+        ))}
+      </ul>
       </div>
     )
   }
